@@ -20,7 +20,7 @@ bool went_down = false;
 int clockCount = 0;
 
 // Clock divider
-int divisions[] = {32, 16, 12, 8, 7, 5, 4, 3, 2, 1};
+int divisions[] =   {32, 16, 16, 8, 8, 4, 4, 2, 2, 1};
 int mapped_div_ind = 1;
 int clock_div_read = 0;
 int division[4] = {1, 1, 1, 1};
@@ -107,11 +107,11 @@ if (went_down){
 
 void patternDriver(int pattern, int seq_step, int pinA, int pinB){
     int patterns[] = {1, 2, 3, 4,
-                      1, 2, 4, 3,
-                      2, 4, 1, 3,
-                      3, 4, 2, 1,
-                      4, 2, 3, 1,
-                      4, 3, 2, 1};
+                      4, 3, 2, 1,
+                      1, 3, 2, 4,
+                      1, 2, 1, 2,
+                      3, 2, 3, 2,
+                      1, 2, 3, 2};
     int step_states[] = {LOW,  LOW,   // step 1 - B, A
                          LOW,  HIGH,  // step 2 - B, A
                          HIGH, LOW,   // step 3 - B, A
